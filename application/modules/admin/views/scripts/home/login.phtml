@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+	<title>Đăng nhập quản lý thống kê Hnammobile</title>
+	<style type="text/css">
+		body {
+		    font-size: 16px;
+		    line-height: 28px;
+		    margin: 0;
+		    font-family: Arial;
+		    color: #333;
+		}
+		* {
+		    box-sizing: border-box;
+		}
+		.wrapper {
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    overflow-y: auto;
+		    overflow-x: hidden;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    background: #f0f0f0;
+		}
+		.login {
+		    width: 290px;
+		    padding: 10px 20px 30px;
+		    background: #fff;
+		    border: 1px solid #f15a25;
+		}
+		.logo {
+			display: block; /* Đảm bảo ảnh là một khối block để áp dụng text-align và margin */
+			margin: 0 auto; /* Căn giữa ảnh theo chiều ngang */
+			width: 150px;
+			height: 100px;
+		}
+
+		.logo img {
+		    height: 45px;
+		}
+		.form-group {
+		    margin-bottom: 15px;
+		}
+		.form-group:last-child {
+		    margin-bottom: 0;
+		}
+		.form-group label {
+		    display: block;
+		    margin-bottom: 5px;
+		}
+		.form-group input {
+		    width: 100%;
+		    padding: 5px 15px;
+		    border: 1px solid #ccc;
+		    font-size: inherit;
+		    line-height: inherit;
+		    height: 40px;
+		}
+		.form-group input#submit {
+		    background: #f15a25;
+		    color: #fff;
+		    border-color: #f15a25;
+		    cursor: pointer;
+		}
+		.form-group input#submit:hover {
+		    background: #fb8c55;
+		    border-color: #fb8c55;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="login">
+			<!-- <h1 class="logo"> -->
+				<img src="https://stcv4.hnammobile.com/v10/images/logo.svg" class="logo" alt="logo New Century">
+			<!-- </h1> -->
+			<form id="form-login" method="post">
+				<div class="form-group">
+					<label for="username">Tên đăng nhập</label>
+					<input type="type" name="username" id="username" placeholder="Tên đăng nhập" />
+				</div>
+				<div class="form-group">
+					<label for="password">Mật khẩu</label>
+					<input type="password" name="password" id="password" placeholder="Mật khẩu" />
+				</div>
+				<div class="form-group">
+					<input id="submit" type="submit" value="Đăng nhập"/>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

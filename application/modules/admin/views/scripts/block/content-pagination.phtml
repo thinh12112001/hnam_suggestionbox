@@ -1,0 +1,76 @@
+<?php
+$total = $this->total;
+if($total > 1){
+$page = $this->page;
+$link = $this->link;
+$separator = '&';
+if(!strpos($link,'?')) {
+    $link.= '?';
+    $separator = '';
+}
+$last = $link . $separator . 'page=' . $total;
+if($page >= $total - 1) {
+    $next = $last;
+}
+else {
+    $next = $link . $separator. 'page=' . ($page+1);
+}
+if(strpos($link,'?') == strlen($link)-1) {
+    $first = substr($link,0,-1);
+}
+else {
+    $first = $link;
+}
+if($page <= 2) {
+    $prev = $first;
+}
+else {
+    $prev = $link . $separator . 'page=' . ($page-1);
+}
+$link .= $separator . 'page=';
+$max = $this->max?$this->max:3;
+$max = $max%2?$max:$max-1;
+$show = floor($max/2);
+if($total < $max) {
+    $max = $total;
+    $show = $total;
+}
+?>
+<div class="pagination">
+    <ul>
+        <li class="first-item<?php if($page == 1) echo " active"; ?>">
+            <a href="<?php echo $first; ?>"><i class="fa fa-angle-double-left"></i></a>
+        </li>
+        <li class="prev-item<?php if($page == 1) echo " active"; ?>">
+            <a href="<?php echo $prev; ?>"><i class="fa fa-angle-left"></i></a>
+        </li>
+        <?php if($page < $show+1): ?>
+            <?php for ($i=1; $i <= $max; $i++): ?>
+                <li class="pagination-item<?php if($page == $i) echo " active"; ?>">
+                    <a href="<?php echo $i>1?$link.$i:$first; ?>"><?php echo $i; ?></a>
+                </li>
+            <?php endfor; ?>
+        <?php elseif($page <= $total-$show): ?>
+            <?php for ($i=$page-$show; $i <= $page+$show; $i++): ?>
+                <li class="pagination-item<?php if($page == $i) echo " active"; ?>">
+                    <a href="<?php echo $i>1?$link.$i:$first; ?>"><?php echo $i; ?></a>
+                </li>
+            <?php endfor; ?>
+        <?php else: ?>
+            <?php for ($i=$total-$max; $i <= $total; $i++): ?>
+                <?php if($i > 0): ?>
+                    <li class="pagination-item<?php if($page == $i) echo " active"; ?>">
+                        <a href="<?php echo $i>1?$link.$i:$first; ?>"><?php echo $i; ?></a>
+                    </li>
+                <?php endif; ?>
+            <?php endfor; ?>
+        <?php endif; ?>
+        <li class="next-item<?php if($page == $total) echo " active"; ?>">
+            <a href="<?php echo $next; ?>"><i class="fa fa-angle-right"></i></a>
+        </li>
+        <li class="last-item<?php if($page == $total) echo " active"; ?>">
+            <a href="<?php echo $last; ?>"><i class="fa fa-angle-double-right"></i></a>
+        </li>
+    </ul>
+</div>
+<?php } ?>

@@ -1,0 +1,142 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Danh sách voucher</h1>
+            </div><!-- /.col -->
+                    <div class="col-sm-6 ">
+                        <a href="/admin/ajax/edit-voucher" class="btn btn-sm-app bg-success float-sm-right">
+                            <i class="fas fa-plus"></i> Add
+                        </a>
+                    </div>
+            <!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+<!--        <form method="get">-->
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="row">
+<!--                        <div class="col-3">-->
+<!--                            <div class="form-group">-->
+<!--                                <label>Date range:</label>-->
+<!---->
+<!--                                <div class="input-group">-->
+<!--                                    <div class="input-group-prepend">-->
+<!--                                        <span class="input-group-text">-->
+<!--                                            <i class="far fa-calendar-alt"></i>-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                    <input type="text" class="form-control float-right" id="reservation">-->
+<!--                                </div>-->
+<!--                                <!-- /.input group -->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>Hạng thành viên</label>
+                                <select class="select2 " id="memberships" name="memberships" style="width: 100%;" >
+                                    <option value="0">Chọn hạng thành viên</option>
+                                    <option value="1">H.MEMBER</option>
+                                    <option value="2">H.GOLD</option>
+                                    <option value="3">H.VIP</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>Loại voucher</label>
+                                <select name="type" id="type" class="select2 " style="width: 100%;" >
+                                    <option selected="" value="0">Chọn loại voucher</option>
+                                    <option value="1">Phiếu mua hàng</option>
+                                    <option value="2">Voucher giảm giá</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label>Trạng thái:</label>
+                                <select class="select2" id="status" name="status" style="width: 100%;" >
+                                    <option selected="selected" value="1" >Hiển thị</option>
+                                    <option value="0">Tắt</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-lg">
+                            <input type="search" id="search" class="form-control form-control-lg" placeholder="Tìm kiếm theo tên" value="">
+                            <div class="input-group-append">
+                                <button type="submit" onclick="loadDataTable()" class="btn btn-lg btn-default">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--        </form>-->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+<!--                    <div class="card-header">-->
+<!--                        <h3 class="card-title">DataTable with default features</h3>-->
+<!--                    </div>-->
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên</th>
+                                <th>Loại voucher</th>
+                                <th>ID voucher</th>
+                                <th>Hạng thành viên</th>
+                                <th>Điểm đổi voucher</th>
+                                <th>Giá trị voucher</th>
+                                <th>Số lượng</th>
+                                <th>Đã lấy</th>
+                                <th>Ngày bắt đầu</th>
+                                <th>Ngày kết thúc</th>
+                                <th>Hình ảnh</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên</th>
+                                <th>Loại voucher</th>
+                                <th>ID voucher</th>
+                                <th>Hạng thành viên</th>
+                                <th>Điểm đổi voucher</th>
+                                <th>Giá trị voucher</th>
+                                <th>Số lượng</th>
+                                <th>Đã lấy</th>
+                                <th>Ngày bắt đầu</th>
+                                <th>Ngày kết thúc</th>
+                                <th>Hình ảnh</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+    </div><!-- /.container-fluid -->
+</section>

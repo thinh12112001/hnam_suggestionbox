@@ -1,0 +1,45 @@
+<div class="action <?php echo (isset($this->class) and trim($this->class))?' '.$this->class:''; ?>">
+	<div class="action-header">
+		<div class="search form-style">
+			<form class="search-form" method="GET">
+                <?php if (!empty($this->categories)): ?>
+				<select name="category">
+					<?php foreach($this->categories as $key=>$category): ?>
+						<option value="<?php echo $key; ?>"<?php if($key == $this->category) echo ' selected'; ?>><?php echo $category; ?></option>
+					<?php endforeach; ?>
+				</select>
+                <?php endif; ?>
+<!--				<select name="author">-->
+<!--					<option value="">Tác giả</option>-->
+<!--					--><?php //foreach($this->users as $key=>$user): ?>
+<!--						<option value="--><?php //echo $key; ?><!--"--><?php //if($key == $this->author) echo ' selected'; ?> <?php //echo $user; ?><!--</option>-->
+<!--					--><?php //endforeach; ?>
+<!--				</select>-->
+                <?php $start_end = (isset($this->start_end) and $this->start_end)?$this->start_end:'Ngày tạo'; ?>
+            	<input type="text" name="daterange" class="daterange" data-empty="Ngày tạo" placeholder="Ngày tạo" value="<?php echo $start_end; ?>">
+				<input type="text" name="key" id="key" value="<?php echo $this->key; ?>" placeholder="Tìm kiếm">
+				<input type="submit" value="Lọc">
+			</form>
+		</div>
+	</div>
+	<div class="action-footer">
+		<?php if($this->check_action): ?>
+		<div class="action form-style">
+			<form class="action-form" action="/admin/content/action-link-categories" method="POST">
+				<select name="active">
+					<option value="">Tác vụ</option>
+					<option value="follow">follow</option>
+					<option value="nofollow">Không follow</option>
+					<option value="enabled">Hiển thị</option>
+					<option value="unabled">Không hiển thị</option>
+				</select>
+				<input type="submit" value="Áp dụng">
+			</form>
+		</div>
+		<?php endif; ?>
+		<div class="total-pagination">
+			<div class="total-item"><?php echo $this->total; ?> Danh mục</div>
+			<?php echo $this->partial('block/content-pagination.phtml', $this->pagination); ?>
+		</div>
+	</div>
+</div>

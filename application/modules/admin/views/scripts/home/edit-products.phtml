@@ -1,0 +1,127 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Thêm phòng</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <form onsubmit="submitAddProducts(this)" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Thông tin chung</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="inputName">Tên sản phẩm</label>
+                                <input type="text" name="title" id="inputName" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="memberships">Hạng thành viên</label>
+                                <select name="memberships" id="memberships" class="form-control select2" style="width: 100%;" >
+                                    <option selected="" value="0">Chọn hạng thành viên</option>
+                                    <option value="1">H.MEMBER</option>
+                                    <option value="2">H.GOLD</option>
+                                    <option value="3">H.VIP</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Thời gian bắt đầu</label>
+                                <div class="input-group date" id="reservationdatetimestart" data-target-input="nearest">
+                                    <input type="text" name="dateStart" class="form-control datetimepicker-input" data-target="#reservationdatetimestart"/>
+                                    <div class="input-group-append" data-target="#reservationdatetimestart" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Thời gian kết thúc</label>
+                                <div class="input-group date" id="reservationdatetimeend" data-target-input="nearest">
+                                    <input type="text" name="dateEnd" class="form-control datetimepicker-input" data-target="#reservationdatetimeend"/>
+                                    <div class="input-group-append" data-target="#reservationdatetimeend" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputStatus">Trạng thái</label>
+                                <div class="">
+                                    <input type="checkbox" name="status" value="1" checked data-bootstrap-switch>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">Thông tin sản phẩm</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="itemid">Itemid sản phẩm </label>
+                                <input type="text" name="itemid" id="itemid" placeholder="12541,16547" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEstimatedBudget">Số lượng sản phẩm</label>
+                                <input type="number" name="quantity" id="inputEstimatedBudget" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="point">Điểm đổi sản phẩm</label>
+                                <input type="number" name="point" id="point" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Ghi chú</label>
+                                <textarea name="note" id="inputDescription" class="form-control" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Hình ảnh (180x180)</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="images" class="custom-file-input" id="exampleInputFile">
+                                        <label class="custom-file-label" for="exampleInputFile">Chọn file</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="https://www.hnammobile.com/admin/ajax/list-products" class="btn btn-secondary">Hủy</a>
+                    <input type="submit" value="Tạo sản phẩm khuyến mãi" class="btn-add btn btn-success float-right">
+                </div>
+            </div>
+        </form>
+
+    </div><!-- /.container-fluid -->
+</section>

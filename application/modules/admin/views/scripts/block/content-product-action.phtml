@@ -1,0 +1,43 @@
+<div class="action action-product<?php echo (isset($this->class) and trim($this->class))?' '.$this->class:''; ?>">
+	<div class="action-header">
+		<div class="search form-style">
+			<form class="search-form" method="GET">
+				<select name="productsid">
+					<?php foreach($this->productsid as $key=>$pid): ?>
+						<option value="<?php echo $key; ?>"<?php if($key == $this->pid) echo ' selected'; ?>><?php echo $pid; ?></option>
+					<?php endforeach; ?>
+				</select>
+				<select name="category">
+					<option value="">Danh mục</option>
+				</select>
+				<select name="onstock">
+					<option value="-1"<?php if($this->onstock==-1) echo ' selected="selected"'; ?>>Tất cả</option>
+					<option value="0"<?php if($this->onstock==0) echo ' selected="selected"'; ?>>Hết hàng(thời gian dài có lại)</option>
+					<option value="1"<?php if($this->onstock==1) echo ' selected="selected"'; ?>>Có hàng</option>
+					<option value="3"<?php if($this->onstock==3) echo ' selected="selected"'; ?>>Tạm hết hàng (vài ngày sau có lại)</option>
+					<option value="4"<?php if($this->onstock==4) echo ' selected="selected"'; ?>>Tạm hết hàng (vài tháng sau có lại)</option>
+					<option value="5"<?php if($this->onstock==5) echo ' selected="selected"'; ?>>Ngừng kinh doanh</option>
+					<option value="6"<?php if($this->onstock==6) echo ' selected="selected"'; ?>>Tin đồn</option>
+					<option value="7"<?php if($this->onstock==7) echo ' selected="selected"'; ?>>Sắp ra mắt</option>
+					<option value="8"<?php if($this->onstock==8) echo ' selected="selected"'; ?>>Sắp có hàng</option>
+				</select>
+                <?php $start_end = (isset($this->start_end) and $this->start_end)?$this->start_end:'Ngày sửa'; ?>
+            	<input type="text" name="daterange" class="daterange" data-empty="Ngày sửa" placeholder="Ngày sửa" value="<?php echo $start_end; ?>">
+				<select name="status">
+					<option value="">Trạng thái</option>
+					<option value="1"<?php if($this->status==1) echo ' selected="selected"'; ?>>Đã sửa</option>
+					<option value="2"<?php if($this->status==2) echo ' selected="selected"'; ?>>Chưa sửa</option>
+				</select>
+				<input type="text" name="key" id="key" value="<?php echo $this->key; ?>" placeholder="Tìm kiếm">
+				<input type="submit" value="Lọc">
+                <button type="submit" value="1" name="export">Xuất</button>
+			</form>
+		</div>
+	</div>
+	<div class="action-footer">
+		<div class="total-pagination">
+			<div class="total-item"><?php echo $this->total?$this->total:'0'; ?> sản phẩm</div>
+			<?php echo $this->partial('block/content-pagination.phtml', $this->pagination); ?>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,169 @@
+<?php
+$static_url = Globals::getStaticUrl();
+$base_url = Globals::getBaseUrl();
+$version = Globals::getVersion();
+?>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0"><?php if (isset($this->detail)){echo "Sửa";}else{ echo "Thêm";} ?> sản phẩm</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <form onsubmit="submitAddProducts(this)" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Thông tin sản phẩm</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="inputName">Tên sản phẩm</label>
+                                <input type="text" name="title" id="inputName" value="<?php if(isset($this->detail['title'])) {echo $this->detail['title'];} ?>" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="parentId">Danh mục cha</label>
+                                <select name="parentId" id="parentId" class="form-control select2" style="width: 100%;" >
+                                    <option value="0">Chọn danh mục</option>
+                                    <?php if (isset($this->listCate) && $this->listCate): ?>
+                                        <?php foreach ($this->listCate as $key=>$item): ?>
+
+                                            <?php
+                                            $checked_row = "";
+                                            if ($this->detail[['parrent_id']]==$item['id']) {
+                                                $checked_row = "selected";
+                                            } ?>
+                                            <option <?php echo $checked_row ?> value="<?php echo $item['id'] ?>"><?php echo $item['title'] ?></option>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescription">Mô tả ngắn</label>
+                                <textarea name="description" id="inputDescription"  class="form-control" rows="4"><?php if(isset($this->detail['description'])) {echo $this->detail['description'];} ?></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDescriptionRight">Mô tả ngắn phải</label>
+                                <textarea name="descriptionRight" id="inputDescriptionRight"  class="form-control" rows="10"><?php if(isset($this->detail['description_right'])) {echo $this->detail['description_right'];} ?></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputNamePrice">Giá sản phẩm</label>
+                                <input type="number" name="price" id="inputNamePrice" value="<?php if(isset($this->detail['price'])) {echo $this->detail['price'];} ?>" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputNamePriceSales">Giá sản phẩm sales</label>
+                                <input type="number" name="priceSales" id="inputNamePriceSales" value="<?php if(isset($this->detail['price_sales'])) {echo $this->detail['price_sales'];} ?>" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="metaTilte">Meta title</label>
+                                <input type="text" name="metaTilte" value="<?php if(isset($this->detail['meta_title'])) {echo $this->detail['meta_title'];} ?>" id="metaTilte" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="metaDescription">Meta Description</label>
+                                <textarea name="metaDescription"  id="metaDescription" class="form-control" rows="4"><?php if(isset($this->detail['meta_description'])) {echo $this->detail['meta_description'];} ?></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputStatus">Trạng thái</label>
+                                <div class="">
+                                    <?php
+                                    $checked = "checked";
+                                    if(isset($this->detail['enabled']) && $this->detail['enabled'] == 0){
+                                        $checked = "";
+                                    }
+                                    ?>
+                                    <input type="checkbox" name="status" value="1" <?php echo $checked?> data-bootstrap-switch>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">Hình ảnh và thuộc tính</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <?php for($i = 0; $i < 10 ; $i++):?>
+                                <div class="form-group">
+                                    <?php if ($i==0):?>
+                                        <label for="<?php echo $i ?>">Hình ảnh đại diện</label>
+                                        <?php else:?>
+                                            <label for="images<?php echo $i ?>">Hình ảnh <?php echo $i ?></label>
+                                        <?php endif ?>
+
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" name="images<?php echo $i ?>" class="custom-file-input" id="images<?php echo $i ?>">
+                                        <label class="custom-file-label" for="images<?php echo $i ?>">Chọn file</label>
+                                    </div>
+                                </div>
+                                <?php
+                                if(isset($this->detail['images'])):?>
+                                    <img src="<?php echo $static_url . $this->detail['images'] ."?v=" . strtotime($this->detail['updated']) ?>" width="200" height="200" style="height:auto" alt="hình đại diện">
+                                <?php endif ?>
+                                </div>
+
+                                <?php endfor ?>
+                            </div>
+                            
+
+
+                            <?php for($i = 0; $i < 5 ; $i++):?>
+                            <div>
+                                <label>Thuộc tính thứ <?php echo $i+1 ?></label> 
+                                <div class = "form-group">
+                                    <label for="dataTitle<?php echo $i ?>">tên thuộc tính:</label>
+                                    <input type="text" name="dataTitle<?php echo $i ?>" class="form-control" id="dataTitle<?php echo $i ?>">
+                                </div>
+                                <div class = "form-group">
+                                    <label for="dataUrl<?php echo $i ?>">link: </label>
+                                    <input type="text" name="dataUrl<?php echo $i ?>" class="form-control" id="dataUrl<?php echo $i ?>">
+                                </div>  
+                                <div class = "form-group">
+                                    <label for="dataMyOrder<?php echo $i ?>">STT: </label>
+                                    <input type="number" name="dataMyOrder<?php echo $i ?>" class="form-control" id="dataMyOrder<?php echo $i ?>">
+                                </div>
+                            </div>
+                            <?php endfor ?>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="https://www.hnammobile.com/admin/home" class="btn btn-secondary">Hủy</a>
+                    <input type="hidden" value="<?php echo $this->token ?>" name="token">
+                    <input type="hidden" value="<?php if(isset($this->detail['id'])){ echo $this->detail['id']; }  ?>" name="id">
+                    <input type="submit" value="Thêm" class="btn-add btn btn-success float-right">
+                </div>
+            </div>
+        </form>
+
+    </div><!-- /.container-fluid -->
+</section>

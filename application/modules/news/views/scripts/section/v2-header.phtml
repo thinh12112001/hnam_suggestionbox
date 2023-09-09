@@ -1,0 +1,196 @@
+<?php
+$static_url = Globals::getStaticUrl();
+$base_url = Globals::getBaseUrl();
+$version = Globals::getVersion();
+$_general = Business_Addon_General::getInstance();
+?>
+
+<style>
+    #search-form {
+        position: relative;
+    }
+    /* .search-dropdown {
+        position: relative;
+        display: inline-block;
+    } */
+    /* .link {
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        max-height: 1200px;
+        overflow-y: auto;
+    } */
+.search-dropdown {
+    position: absolute;
+    flex-direction: column;
+    display:flex;
+    background: #ccc;
+    left:0;
+}
+.link {
+    color: black;
+    min-width: 230px;
+    border: 1px solid #ddd;
+    padding: 5px 20px;
+}
+
+.img {
+    padding: 5px 5px 0px 0px;
+}
+
+.centered-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cookie-value {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.cart-count {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php if (1 || $this->noIndex): ?>
+        <meta name="robot" content="noindex"/>
+        <meta name="AdsBot-Google" content="noindex"/>
+    <?php else: ?>
+        <meta name="robots" content="index,follow"/>
+    <?php endif; ?>
+    <title><?php echo SEOPlugin::getTitle(); ?></title>
+    <meta name="description" content="<?php echo SEOPlugin::getDescriptions(); ?>" />
+    <?php if(SEOPlugin::getKeywords()): ?>
+        <meta name="keywords" content="<?php echo SEOPlugin::getKeywords(); ?>" />
+    <?php endif; ?>
+    <!--    <meta name="copyright" content="Công ty TNHH Thương mại Dịch vụ Di Động Sao Việt" />-->
+    <!--    <meta name="author" content="Công ty TNHH Thương mại Dịch vụ Di Động Sao Việt" />-->
+    <!--    <meta name="resource-type" content="Document" />-->
+    <!--    <meta name="distribution" content="Global" />-->
+    <!--    <meta name="revisit-after" content="1 days" />-->
+    <!--    <meta name="generator" content="Công ty TNHH Thương mại Dịch vụ Di Động Sao Việt" />-->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <?php if($this->canonical): ?>
+        <link rel="canonical" href="<?php echo $this->canonical; ?>" />
+    <?php endif; ?>
+    <link rel="dns-prefetch" href="<?php echo Globals::getStaticUrl(); ?>">
+    <?php if(SEOPlugin::getSocialUrl()): ?>
+        <meta property="og:url" content="<?php echo SEOPlugin::getSocialUrl(); ?>" />
+    <?php endif; ?>
+    <meta property="og:image" content="<?php echo SEOPlugin::getSocialImg(); ?>" />
+    <meta property="og:title" content="<?php echo SEOPlugin::getTitle(); ?>" />
+    <meta property="og:description" content="<?php echo SEOPlugin::getDescriptions(); ?>" />
+    <meta property="og:type" content="<?php echo SEOPlugin::getType(); ?>" />
+
+    <?php
+    echo $this->headLink();
+    echo $this->partial('css/bootstrap-reboot.phtml');
+    echo $this->partial('css/bootstrap-grid.phtml');
+    echo $this->partial('css/v2/styles.phtml');
+
+
+
+
+    if (!empty($this->css)) {
+        foreach($this->css as $css) {
+            echo $this->partial('css/v2/'.$css);
+        }
+    }
+
+    ?>
+    <script>
+        var loadThirdPartyJSScroll = false;
+    </script>
+        <!-- <script src="http://newcentury.xyz/v2/js/alert.js?v=169"></script> -->
+</head>
+<body>
+<header class="">
+    <div class="header-main">
+        <nav class="navbar">
+            <div class="container-full ">
+                <div class="header-menu">
+                    <a role="button" aria-label="menu" aria-expanded="false" data-target="navMenu" class="navbar__burger">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+
+                </div>
+                <a class="navbar-brand" href="/">
+                    <img src="/v2/images/logo-05.svg" width="124" height="66" class="auto-size-logo" loading="lazy">
+                </a>
+                <ul class="nav-main primary-ul">
+                    <!-- <input type="hidden" id="cookie-value"> -->
+                    
+                    <input type="hidden" id="hidden-value" value="">
+                    <li class="nav-item">
+                        <a class="nav__link" href="<?php echo $base_url?>cart">Giỏ hàng<span class="cart-count" id ="count"></span></a>
+                    </li>
+                    
+                    <li class="nav-item "><a class="nav__link" href="<?php echo $base_url?>about">Giới thiệu</a></li>
+                    <li class="nav-item has-sub">
+                        <a class="nav__link" href="<?php echo $base_url?>/room">Loại phòng</a>
+                        <?php if (isset($this->menu_room) && $this->menu_room): ?>
+                        <ul class="sub-menu sub-0">
+                            <?php foreach ($this->menu_room as $key=>$item): ?>
+                            <li>
+                                <a href="<?php echo $base_url?>room/<?php echo $item['slug'] ?>.<?php echo $item['id']?>.html"><?php echo $item['title'] ?></a>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php endif; ?>
+                    </li>
+                    <li class="nav-item"><a class="nav__link" href="<?php echo $base_url?>offer">Ưu đãi</a></li>
+                    <li class="nav-item"><a class="nav__link" href="<?php echo $base_url?>news">Tin tức</a></li>
+                    <li class="nav-item"><a class="nav__link" href="<?php echo $base_url?>contact">Liên hệ</a></li>
+                    <span class="search-icon" onclick="toggleSearchForm()"></span>
+                    <!-- <div id="search-form" class="search-form"> -->
+                    <form id="search-form" onsubmit="submitSearchForm(event)">
+
+                        <input type="text" id="search-input" placeholder="Nhập tiêu đề tin tức" onkeyup="searchAndDisplayResults(this)">
+                        <button type="submit">Tìm kiếm</button>
+                        <div id="test" class="container">
+                            
+                        </div>
+                        
+                    </form>
+                    <!-- </div> -->
+                    <div id="search-results"></div>
+
+                </ul>
+                <div class="wrapper" id="wrapper-menu">
+                    <ul>
+                        
+                        <li><a class="nav-wrapper__link" href="<?php echo $base_url?>about">Giới thiệu</a></li>
+                        <li><a class="nav-wrapper__link" href="<?php echo $base_url?>room">Loại phòng</a></li>
+                        <li><a class="nav-wrapper__link" href="<?php echo $base_url?>offer">Ưu đãi</a></li>
+                        <li><a class="nav-wrapper__link" href="<?php echo $base_url?>news">Tin tức</a></li>
+                        <li><a class="nav-wrapper__link" href="<?php echo $base_url?>contact">Liên hệ</a></li>
+                        
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+    </div>
+</header>
+<div class="main">
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script src="http://internal_hnammobile.com/v2/js/alert.js?v=169"></script>

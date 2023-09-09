@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0">
+    <title>Khách sạn</title>
+    <meta name="keywords" content="demo">
+    <meta name="description" content="demo">
+    <link rel="stylesheet" href="../css/bootstrap-reboot.min.css"/>
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" href="../vendor/slick/slick.css"/>
+
+    <link rel="stylesheet" href="../vendor/swiper/swiper-bundle.min.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />-->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/room.css">
+</head>
+<body>
+<header class="">
+    <div class="header-main">
+        <nav class="navbar">
+            <div class="container-full ">
+                <div class="header-menu">
+                    <a role="button" aria-label="menu" aria-expanded="false" data-target="navMenu" class="navbar__burger">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+
+                </div>
+                <a class="navbar-brand" href="/">
+                    <img src="../images/logo.webp" width="50" height="50" class="auto-size">
+                </a>
+                <ul class="nav-main">
+                    <li class="nav-item"><a class="nav__link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav__link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav__link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav__link" href="#">Gallery</a></li>
+                    <li class="nav-item"><a class="nav__link" href="#">Feedback</a></li>
+                </ul>
+                <div class="wrapper" id="wrapper-menu">
+                    <ul>
+                        <li><a class="nav-wrapper__link" href="#">Home</a></li>
+                        <li><a class="nav-wrapper__link" href="#">About</a></li>
+                        <li><a class="nav-wrapper__link" href="#">Services</a></li>
+                        <li><a class="nav-wrapper__link" href="#">Gallery</a></li>
+                        <li><a class="nav-wrapper__link" href="#">Feedback</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+    </div>
+</header>
+<div class="main">
+    <section id="banner-images">
+    </section>
+    <section id="main-wrap" class="page-tab grey-bg" >
+        <div class="container py-5">
+            <div class="common-intro">
+                <div class="common-intro_overlay">SMYTH TRIBECA</div>
+                <div class="common-intro_title">MODERN ROOMS & SUITES</div>
+                <div class="common-intro_decs">Explore our spacious guest rooms and suites below</div>
+            </div>
+            <div class="tab-wrap d-flex justify-content-center">
+                <p class="tab-item active" data-target="see-all"><span>See All</span></p>
+                <p class="tab-item" data-target="superior"><span>superior</span></p>
+                <p class="tab-item" data-target="deluxe"><span>deluxe</span></p>
+                <p class="tab-item" data-target="suite"><span>suite</span></p>
+                <p class="tab-item" data-target="accessible"><span>accessible</span></p>
+            </div>
+            <div class="tab-list" id="tab-list">
+                <div class="tab-content show" id="see-all">
+                    <div class="room-list">
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="superior">
+                    <div class="room-list">
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room3.jpg" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content show" id="deluxe">
+                    <div class="room-list">
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="suite">
+                    <div class="room-list">
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room3.jpg" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_size.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen-size Sofa bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/living_room.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Living Room</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>King Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>500 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content show" id="accessible">
+                    <div class="room-list">
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-8 room-item_image_left">
+                                    <a href="#">
+                                        <img src="../images/room/room1.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-4 room-item_info_right">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="room-item py-5">
+                            <div class="row">
+                                <div class="col-12 col-md-4 room-item_info_left">
+                                    <div class="room-item_info_content">
+                                        <div class="room-item_info_content_title">
+                                            <a href="#" class="room-title">SUPERIOR QUEEN</a>
+                                            <p class="room-price">1.000.000đ</p>
+                                        </div>
+                                        <hr>
+                                        <div class="room-features">
+                                            <ul>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_bed.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>Queen Bed</span>
+                                                </li>
+                                                <li>
+                                                    <div class="room-features_icon">
+                                                        <img src="../images/room/queen_total.webp" width="24" height="24" class="auto-size">
+                                                    </div>
+                                                    <span>290 sq. ft.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="room-btn">
+                                            <a href="#" class="btn btn--tertiary"><span>View<span class="room-btn-text"> Room</span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8 room-item_image_right">
+                                    <a href="#">
+                                        <img src="../images/room/room2.webp" width="500" height="500" class="auto-size-full object-fit-cover">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+<footer class="mt-5">
+    <div class="main pt-0 pt-lg-5 mt-2">
+        <div class="container container-home">
+
+            <div class="footer-top">
+                <div class="footer-top_logo">
+                    <img src="../images/logo2.webp" width="318" height="132" class="auto-size">
+                </div>
+                <p class="mb-1 footer-top_address">
+                    <a href="https://maps.google.com/?q=85+W+Broadway,+New+York,+NY+10007,+USA&amp;ftid=0x89c25a1f26a2f7a1:0xa61f2f68453d917c" target="_blank">85 West Broadway, New York, NY 10007-1045</a>
+                </p>
+                <div class="footer-top_contact mb-2">
+                    <a href="tel:917-997-2700">917-997-2700</a>
+                    <span class="pipe">|</span>
+                    <a href="mailto:mail@gmail.com">mail@gmail.com</a>
+                </div>
+                <div class="footer-top_social">
+                    <div class="footer-top_social_item">
+                        <a href=""><img src="../images/icon-social/icon-instagram.svg" width="24" height="24"></a>
+                        <p class="footer-social_title">Instagram</p>
+                    </div>
+                    <div class="footer-top_social_item">
+                        <a href=""><img src="../images/icon-social/icon-facebook.svg" width="24" height="24"></a>
+                        <p class="footer-social_title">Facebook</p>
+                    </div>
+                    <div class="footer-top_social_item">
+                        <a href=""><img src="../images/icon-social/icon-location.svg" width="24" height="24"></a>
+                        <p class="footer-social_title">Address</p>
+                    </div>
+                    <div class="footer-top_social_item">
+                        <a href=""><img src="../images/icon-social/icon-phone.svg" width="24" height="24"></a>
+                        <p class="footer-social_title">Phone</p>
+                    </div>
+                    <div class="footer-top_social_item">
+                        <a href=""><img src="../images/icon-social/icon-twitter.svg" width="24" height="24"></a>
+                        <p class="footer-social_title">Twitter</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyrights">© 2023 Smyth Tribeca</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/jquery-3.3.1.slim.min.js" type="text/javascript" ></script>
+<script src="../vendor/slick/slick.min.js" type="text/javascript"></script>
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
+
+<script src="../vendor/swiper/swiper-bundle.min.js" type="text/javascript"></script>
+<script src="../js/script.js" type="text/javascript"></script>
+<script src="../js/room.js" type="text/javascript"></script>
+</body>
+</html>

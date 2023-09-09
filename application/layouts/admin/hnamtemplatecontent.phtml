@@ -1,0 +1,9 @@
+<?php
+
+if(isset($this->layout()->_section["header"]) and $this->layout()->_section["header"]){
+    echo $this->layout()->_section["header"];
+}
+echo $this->layout()->content;
+if(isset($this->layout()->_section["footer"]) and $this->layout()->_section["footer"]){
+    echo $this->layout()->_section["footer"];
+}

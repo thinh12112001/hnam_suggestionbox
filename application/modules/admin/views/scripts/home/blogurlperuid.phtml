@@ -1,0 +1,93 @@
+<style>
+    .input-group-lg>.custom-select, .input-group-lg>.form-control:not(textarea) {
+        font-size: 16px;
+        height: calc(2.3rem + 2px);
+    }
+    .input-group-lg>.input-group-append>.btn{
+        padding: 5px 10px;
+        font-size: 17px;
+        line-height: 1.5;
+        border-radius: 0.3rem;
+    }
+</style>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <h1 class="m-0">Các URL mà UID này truy cập:</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="row">
+                    <?php
+                        if(isset($_POST['uid'])) {
+                            
+                            // Giải mã giá trị id từ input ẩn
+                            $originalUid = $_POST['uid'];
+                            
+                            $originalUidDecoded = urldecode($originalUid);
+                            
+                            // Lấy ra giá trị id đã giải mã
+                            $uid = $originalUidDecoded;
+                            $getBlogUrlByUid = Business_Addon_Hnproducts::getInstance()->getBlogUrlByUid($uid);
+                            
+                        }
+                    ?>
+                    </div>
+
+                </div>
+            </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table id="tableCate" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <<th>STT</th>
+                                <th>ID sản phẩm</th>
+                                <th>URL</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php if ($getBlogUrlByUid): $key=0;?>
+                                    
+                                    <?php foreach ($getBlogUrlByUid as $item): ?>
+                                        <tr>
+                                            <td><?php echo ++$key; ?></td>
+                                            <td><?php echo $item['itemid'] ?></td>
+                                            <td><?php echo $item['blogUrl'] ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                <tr><td colspan="3"></td></tr>
+                                <?php endif; ?>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>STT</th>
+                                <th>ID sản phẩm</th>
+                                <th>URL</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+    </div><!-- /.container-fluid -->
+</section>

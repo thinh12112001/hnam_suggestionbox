@@ -1,0 +1,112 @@
+<style>
+    .input-group-lg>.custom-select, .input-group-lg>.form-control:not(textarea) {
+        font-size: 16px;
+        height: calc(2.3rem + 2px);
+    }
+    .input-group-lg>.input-group-append>.btn{
+        padding: 5px 10px;
+        font-size: 17px;
+        line-height: 1.5;
+        border-radius: 0.3rem;
+    }
+</style>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <h1 class="m-0">Thông tin chi tiết giỏ hàng:</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="row">
+                    <?php
+                        if(isset($_POST['uid'])) {
+                            
+                            // Giải mã giá trị id từ input ẩn
+                            $originalUid = $_POST['uid'];
+                            
+                            $originalUidDecoded = urldecode($originalUid);
+                            
+                            // Lấy ra giá trị id đã giải mã
+                            $uid = $originalUidDecoded;
+                            $getCartValueByUid = Business_Addon_Hnproducts::getInstance()->getCartValueByUid($uid);
+                            
+                        }
+                    ?>
+                    </div>
+
+                </div>
+            </div>
+
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table id="tableCate" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Thông tin giỏ hàng</th>
+                                <!-- <th>URL</th> -->
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php if ($getCartValueByUid): 
+                                $key=0;
+                                // $cartValueArray = json_decode($cartValueJson, true);
+                                ?>
+                                    
+                                    <?php foreach ($getCartValueByUid as $item): 
+                                        $cartItems = json_decode($item['cartValue'], true);
+                                        $itemStrings = array();
+                                        // Duyệt qua từng phần tử trong mảng $cartItems
+                                        foreach ($cartItems as $item) {
+                                            // Lấy giá trị itemid và quantity từ từng phần tử
+                                            $itemid = $item['id'];
+                                            $quantity = $item['quantity'];
+
+                                            // Tạo chuỗi cho từng phần tử và thêm vào mảng
+                                            $itemStrings[] = "ID sản phẩm: $itemid , Số lượng: $quantity";
+                                        }
+
+                                        // Nối các chuỗi thành một chuỗi duy nhất, phân cách bằng dấu phẩy và khoảng trắng
+                                        $resultString = implode("<br>", $itemStrings);
+                                    ?>
+                                        <tr>
+                                            <td><?php echo ++$key; ?></td>
+                                            <!-- <td><?php echo $item['cartValue'] ?></td> -->
+                                            <td><?php echo $resultString ?></td>
+                                            <!-- <td><?php echo $item['blogUrl'] ?></td> -->
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                <tr><td colspan="3"></td></tr>
+                                <?php endif; ?>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>STT</th>
+                                <th>Thông tin giỏ hàng</th>
+                                <!-- <th>URL</th> -->
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+    </div><!-- /.container-fluid -->
+</section>

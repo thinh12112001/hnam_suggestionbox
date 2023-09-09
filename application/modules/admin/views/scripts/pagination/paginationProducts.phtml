@@ -1,0 +1,103 @@
+  <?php 
+ $url=$_SERVER['REQUEST_URI'];
+?>
+ 
+ <div class="pagination-bar row">
+<?php if ($this->pageCount): ?>
+     <ul class="pagination col-sm-12 col-lg-12" style="    text-align: left;">
+	<!-- Previous page link -->
+<?php if ($this->firstPageInRange>1): ?>
+<li ><a rel="nofollow" class="last" href="<?= SEOPlugin::getUrl('page',1,$url)?>"> 1</a></li>
+<?php endif; ?>
+<?php if (isset($this->previous)): ?>
+<li><a rel="nofollow" href="<?= SEOPlugin::getUrl('page',$this->previous,$url)?>">« Pre</a></li>
+<?php endif; ?>
+<!-- Numbered page links -->
+<?php foreach ($this->pagesInRange as $page): ?>
+  <?php if ($page != $this->current): ?>
+    <li><a rel="nofollow" href="<?= SEOPlugin::getUrl('page',$page,$url)?>"> <?php echo $page; ?>  </a></li>
+    <?php else: ?>
+  <li class="active"><a rel="nofollow" href="<?= SEOPlugin::getUrl('page',$page,$url)?>"> <?php echo $page; ?>  </a></li>
+  <?php endif; ?>
+<?php endforeach; ?> 
+<!-- Next page link -->
+<!-- Next page link -->
+<?php if (isset($this->next)): ?>
+<li><a rel="nofollow" href="<?= SEOPlugin::getUrl('page',$this->next,$url)?>">Next »</a></li>
+<?php endif; ?>
+<?php if ($this->lastPageInRange<$this->pageCount): ?>
+<li ><a rel="nofollow" class="last" href="<?= SEOPlugin::getUrl('page',$this->pageCount,$url)?>"><?php echo $this->pageCount; ?></a></li>
+<?php endif; ?>
+ <?php if(strpos($_SERVER['REQUEST_URI'], 'phu-kien')!==false): ?>
+ <li>
+     <select id="selectPage" style="     padding: 5px 0px; width: 50px;float: left; margin-right: 10px;" >
+         <option value="20" <?php if($this->itemCountPerPage==20) echo "selected"; ?>>20/1</option>
+         <option value="40" <?php if($this->itemCountPerPage==40) echo "selected"; ?>>40/1</option>
+         <option value="80" <?php if($this->itemCountPerPage==80) echo "selected"; ?>>80/1</option>
+         <option value="120" <?php if($this->itemCountPerPage==120) echo "selected"; ?>>120/1</option>
+    </select>
+ </li>
+<li><a rel="nofollow" id="chonPage" style="background: #ff5400; color: white;" max="<?= $this->pageCount ?>" data="<?= SEOPlugin::getUrl('page',tdt,$url)?>">Page</a></li>
+<li><input id='pagetdt' value="<?= $this->current ?>"  style="padding: 4px 5px;
+    width: 25px; float: left; margin-right: 10px;" type="number"></li> 
+<?php endif; ?>
+</ul>
+<?php endif; ?>
+  </div>
+ <?php if(strpos($_SERVER['REQUEST_URI'], 'phu-kien')!==false): ?>
+<script>
+    
+
+    $( "#selectPage" ).change(function() {
+        $.cookie('countList', $(this ).val(), { expires: 1, path: '/' });
+     var url = '<?php echo md5(Business_Common_Utils::curPageURL()); ?>'; 
+     $.get("/api/clear-cached?url="+url, function(data, status){
+            if(data==1)
+            {
+                window.location.href =  window.location.href ;
+         }
+    });
+        
+});
+
+
+    $( "#chonPage" ).click(function() {
+        if($( "#pagetdt" ).val()><?= $this->pageCount ?>)
+        {    alert('Số trang phải <= '+$( this ).attr('max'));
+            $( "#pagetdt" ).focus();
+        }else
+        {    
+            var str =$( this ).attr('data');
+            var res = str.replace("tdt",$( "#pagetdt" ).val());
+            window.location.href = res;
+            
+        }
+});
+</script>
+
+
+<style>
+    .pagination-bar ul li a {
+    margin-right: 10px;
+}
+.pagination-bar ul li {
+    display: block;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+@media only screen and (max-width: 600px)
+{
+.pagination-bar ul li a {
+    padding: 5px 5px !important}
+}
+
+</style>
+<?php endif; ?>
